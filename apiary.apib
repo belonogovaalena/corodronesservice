@@ -329,3 +329,28 @@ HOST: https://polls.apiblueprint.org/
         }
 
 + Response 404
+
+
+## Соотнесение номера рейса и названия маршрута [/routes/info]
+
+### Получить таблицу соотнесения номера рейса и названия маршрута [GET]
+
++ Response 200 (application/json; charset=UTF-8)
+
+        {
+            "items": [
+                {
+                    "flightNumber": "NUMBER1",
+                    "route": "ROUTE1"
+                },
+                {
+                    "flightNumber": "NUMBER2",
+                    "route": "ROUTE2"
+                }
+            ],
+            "count": 2
+        }
+
++ Response 204
+
++ Response 404
