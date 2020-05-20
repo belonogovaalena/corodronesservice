@@ -3,78 +3,38 @@ HOST: https://polls.apiblueprint.org/
 
 # corodronesservice
 
-Polls is a simple API allowing consumers to view polls and vote in them.
+Описание REST API проекта "МетеоБАС", предназначенного для демонстрации метеообеспечения БАС, 
+отслеживания БПЛА при перелетах "Погорелое-Городище - Алфельево".
 
-## Questions Collection [/questions]
+## Положения объектов от ДЕЦИМА [/objects/decima]
 
-### List All Questions [GET]
+### Получить список с объектами от ДЕЦИМА [GET]
 
-+ Response 200 (application/json)
-
-        [
-            {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
-                    {
-                        "choice": "Swift",
-                        "votes": 2048
-                    }, {
-                        "choice": "Python",
-                        "votes": 1024
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 512
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 256
-                    }
-                ]
-            }
-        ]
-
-### Create a New Question [POST]
-
-You may create your own question using this action. It takes a JSON
-object containing a question and a collection of answers in the
-form of choices.
-
-+ Request (application/json)
++ Response 200 (application/json; charset=UTF-8)
 
         {
-            "question": "Favourite programming language?",
-            "choices": [
-                "Swift",
-                "Python",
-                "Objective-C",
-                "Ruby"
-            ]
-        }
-
-+ Response 201 (application/json)
-
-    + Headers
-
-            Location: /questions/2
-
-    + Body
-
-            {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
+            "items": [
                     {
-                        "choice": "Swift",
-                        "votes": 0
-                    }, {
-                        "choice": "Python",
-                        "votes": 0
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 0
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 0
+                        "flightNumber": "NUMBER1",
+                        "latitude": 61.6988,
+                        "longitude": 72.177946666667,
+                        "altitude": 14.02448,
+                        "velocity": 0,
+                        "time": 1589864781
+                    },
+                    {
+                        "flightNumber": "NUMBER2",
+                        "latitude": 51.939325,
+                        "longitude": 104.7471,
+                        "altitude": 135.36672,
+                        "velocity": 1.4388787072,
+                        "time": 1589951264
                     }
-                ]
-            }
+                ],
+            "count": 2
+    
+
++ Response 204 (application/json; charset=UTF-8)
+
+
++ Response 404 (application/json; charset=UTF-8)
