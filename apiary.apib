@@ -76,3 +76,256 @@ HOST: https://polls.apiblueprint.org/
 + Response 204
 
 + Response 404
+
+## Запланированные маршруты полета БПЛА [/routes]
+
+### Получить список запланированных маршрутов полета БПЛА [GET]
+
++ Response 200 (application/json; charset=UTF-8)
+
+        {
+            "payloadProfiles": [
+                {
+                    "name": "CameraEditionExample",
+                    "payloadType": "CAMERA",
+                    "imageKey": "some_key",
+                    "sealed": false,
+                    "unremovable": false,
+                    "parameters": {
+                        "weight": 0.074,
+                        "frequency": 0,
+                        "power": 0,
+                        "trueFocalLength": 0.0028,
+                        "sensorWidth": 0.00617,
+                        "sensorHeight": 0.00455,
+                        "sensorHorizontalPixels": 4000,
+                        "sensorVerticalPixels": 3000,
+                        "minTriggeringInterval": 1
+                    }
+                }
+            ],
+            "vehicleProfiles": [
+                {
+                    "name": "SomeEmulator",
+                    "vehicleType": "FIXED_WING",
+                    "modelKey": "3dr_aero_m",
+                    "imageKey": "3dr_aero_m",
+                    "platformCode": "Emulator",
+                    "sealed": false,
+                    "unremovable": true,
+                    "primary": true,
+                    "payloadProfiles": [
+                        "CameraEditionExample"
+                    ],
+                    "parameters": {
+                        "height": 0.5,
+                        "width": 1.8,
+                        "length": 1.3,
+                        "maxClimbRate": 2,
+                        "maxHorizontalSpeed": 25,
+                        "maxAltitude": 4000,
+                        "maxWaypoints": 120,
+                        "maxFlightTime": 2400,
+                        "windResistance": 12,
+                        "dryTakeoffWeight": 2.65,
+                        "maxTakeoffWeight": 4.65,
+                        "batteryWeight": 0.65,
+                        "chargedBatteryVoltage": 16.8,
+                        "dischargedBatteryVoltage": 12.6,
+                        "normalBatteryVoltage": 14,
+                        "lowBatteryVoltage": 13.3,
+                        "lowGpsSatellites": 7,
+                        "normalGpsSatellites": 9,
+                        "safeDistanceToTerrain": 50,
+                        "safeDistanceToObstacle": 100,
+                        "waypointAcceptanceRadius": 10,
+                        "fenceRadius": 500,
+                        "lowTelemetryLevel": 50,
+                        "normalTelemetryLevel": 70,
+                        "defaultClimbRate": 2,
+                        "defaultDescentRate": 1,
+                        "glideSlope": 20,
+                        "defaultHorizontalSpeed": 15,
+                        "landingGroundSpeed": 10,
+                        "maxAltitudeAgl": 120,
+                        "landingFlareAltitude": null,
+                        "landingFlareTime": null,
+                        "minLandingPitch": null,
+                        "landingFlareDamp": null,
+                        "landingApproachAirspeed": null,
+                        "landingSpeedWeighting": null,
+                        "maxAutoFlightPitch": null,
+                        "maxPitch": null,
+                        "minThrottle": null,
+                        "landingSinkRate": null,
+                        "landingRangefinderEnabled": null,
+                        "minRangefinderDistance": null,
+                        "maxDescentRate": 1,
+                        "lowBatteryPowerLevel": 20,
+                        "normalBatteryPowerLevel": 50
+                    }
+                }
+            ],
+            "vehicles": [
+                {
+                    "name": "SomeCopter",
+                    "vehicleId": 4289872485,
+                    "icaoAddress": null,
+                    "tailNumber": null,
+                    "type": "MULTICOPTER",
+                    "altitudeOrigin": null,
+                    "platformCode": "SomeCOde",
+                    "profile": "SomeProfile",
+                    "emulator": false,
+                    "serialNumber": "1",
+                    "port": "com6",
+                    "source": "VSM"
+                }
+            ],
+            "mission": {
+                "name": "SomeMission",
+                "description": null,
+                "creationTime": 1501144514756,
+                "routes": [
+                    {
+                        "name": "SomeRoute",
+                        "creationTime": 1501139400000,
+                        "scheduledTime": null,
+                        "startDelay": null,
+                        "vehicleProfile": "SomeEmulator",
+                        "altitudeType": "AGL",
+                        "trajectoryType": "STRAIGHT",
+                        "safeAltitude": 50,
+                        "maxAltitude": 120,
+                        "initialSpeed": 0,
+                        "maxSpeed": 0,
+                        "failsafes": {
+                            "rcLost": "GO_HOME",
+                            "gpsLost": "WAIT",
+                            "lowBattery": "LAND",
+                            "datalinkLost": "GO_HOME"
+                        },
+                        "checkAerodromeNfz": true,
+                        "checkCustomNfz": true,
+                        "segments": [
+                            {
+                                "type": "TakeOff",
+                                "actions": [],
+                                "point": {
+                                    "latitude": 0.8163853594357775,
+                                    "longitude": 0.1456501603260042,
+                                    "altitude": 31.054388543823734,
+                                    "altitudeType": "AGL"
+                                },
+                                "parameters": {
+                                    "avoidObstacles": true,
+                                    "avoidTerrain": true,
+                                    "speed": 5
+                                }
+                            },
+                            {
+                                "type": "Waypoint",
+                                "actions": [],
+                                "point": {
+                                    "latitude": 0.8163858617141155,
+                                    "longitude": 0.14563694689881257,
+                                    "altitude": 34.95069231768139,
+                                    "altitudeType": "AGL"
+                                },
+                                "parameters": {
+                                    "avoidObstacles": true,
+                                    "avoidTerrain": true,
+                                    "speed": 5,
+                                    "wpTurnType": "STOP_AND_TURN"
+                                }
+                            },
+                            {
+                                "type": "Photogrammetry",
+                                "actions": [
+                                    {
+                                        "type": "CameraSeriesByTime",
+                                        "interval": null,
+                                        "shotsNumber": null,
+                                        "startDelay": null,
+                                        "autoCalc": true
+                                    }
+                                ],
+                                "polygon": {
+                                    "points": [
+                                        {
+                                            "latitude": 0.8163731961263552,
+                                            "longitude": 0.14566000911657936,
+                                            "altitude": 0,
+                                            "altitudeType": "AGL"
+                                        },
+                                        {
+                                            "latitude": 0.8163681310167368,
+                                            "longitude": 0.14567378346675408,
+                                            "altitude": 0,
+                                            "altitudeType": "AGL"
+                                        }
+                                    ]
+                                },
+                                "parameters": {
+                                    "actionExecution": "ACTIONS_ON_FORWARD_PASSES",
+                                    "altitudeType": "AGL",
+                                    "areaScanAllowPartialCalculation": false,
+                                    "avoidObstacles": true,
+                                    "camera": "CameraEditionExample",
+                                    "camTopFacingForward": true,
+                                    "directionAngle": 23,
+                                    "doubleGrid": false,
+                                    "generateAdditionalWaypoints": false,
+                                    "groundSampleDistance": 2,
+                                    "noActionsAtLastPoint": true,
+                                    "overlapForward": 70,
+                                    "overlapSide": 60,
+                                    "overshoot": null,
+                                    "overshootSpeed": null,
+                                    "speed": 10,
+                                    "tolerance": 1,
+                                    "wpTurnType": "SPLINE"
+                                }
+                            },
+                            {
+                                "type": "Waypoint",
+                                "actions": [],
+                                "point": {
+                                    "latitude": 0.8163851821720645,
+                                    "longitude": 0.14564970906942715,
+                                    "altitude": 31.054388543823734,
+                                    "altitudeType": "AGL"
+                                },
+                                "parameters": {
+                                    "avoidObstacles": true,
+                                    "avoidTerrain": true,
+                                    "speed": 5,
+                                    "wpTurnType": "SPLINE"
+                                }
+                            },
+                            {
+                                "type": "TakeOff",
+                                "actions": [],
+                                "point": {
+                                    "latitude": 0.9797811727471393,
+                                    "longitude": 0.6098413504007494,
+                                    "altitude": 29.933313882211223,
+                                    "altitudeType": "AGL"
+                                },
+                                "parameters": {
+                                    "avoidObstacles": true,
+                                    "avoidTerrain": true,
+                                    "speed": 5
+                                }
+                            }
+                        ],
+                        "takeoffHeight": null
+                    }
+                ],
+                "vehicles": [
+                    "SomeCopter1"
+                ]
+            }
+        }
+
++ Response 404
