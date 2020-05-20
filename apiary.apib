@@ -41,8 +41,11 @@ HOST: https://polls.apiblueprint.org/
 
 ## Траектории объектов от ДЕЦИМА [/trajectory/decima{?id}]
 
-### Получить список траекторий объектов от ДЕЦИМА [GET]
++ Parameters
+    + id (optional, String) ... Позывной БПЛА
 
+    
+### Получить список траекторий объектов от ДЕЦИМА [GET]
 
 + Response 200 (application/json; charset=UTF-8)
 
@@ -71,3 +74,5 @@ HOST: https://polls.apiblueprint.org/
             
 
 + Response 204
+
++ Response 404
