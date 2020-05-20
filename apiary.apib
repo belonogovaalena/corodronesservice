@@ -354,3 +354,86 @@ HOST: https://polls.apiblueprint.org/
 + Response 204
 
 + Response 404
+
+## Метеопрогноз по маршруту Орловка - Погорелое Городище [/meteo/route]
+
+### Получить метеопрогноз по маршруту Орловка - Погорелое Городище [GET]
+
++ Response 200 (application/json; charset=UTF-8)
+
+        {
+            "count": 4,
+            "items": [
+                {
+                    "date": "20200520T120000",
+                    "profile": [
+                        {
+                            "coordinate": {
+                                "latitude": 56.142626,
+                                "longitude": 34.987395
+                            },
+                            "pointName": "R1",
+                            "data": [
+                                {
+                                    "height": 208,
+                                    "windSpeed": 4.950497444687018,
+                                    "windDirection": 354.85561237566645
+                                },
+                                {
+                                    "height": 308,
+                                    "windSpeed": 5.277985753835761,
+                                    "windDirection": 353.8218170420122
+                                },
+                                {
+                                    "height": 408,
+                                    "windSpeed": 5.821077082199134,
+                                    "windDirection": 352.2815782770567
+                                },
+                                {
+                                    "height": 508,
+                                    "windSpeed": 6.026392607452602,
+                                    "windDirection": 351.16812968623765
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "date": "20200520T130000",
+                    "profile": [
+                        {
+                            "coordinate": {
+                                "latitude": 56.142626,
+                                "longitude": 34.987395
+                            },
+                            "pointName": "R1",
+                            "data": [
+                                {
+                                    "height": 208,
+                                    "windSpeed": 4.342540619497339,
+                                    "windDirection": 321.7467083907157
+                                },
+                                {
+                                    "height": 308,
+                                    "windSpeed": 4.724796619254845,
+                                    "windDirection": 320.5038268295551
+                                },
+                                {
+                                    "height": 408,
+                                    "windSpeed": 5.365360725085247,
+                                    "windDirection": 318.4098801348923
+                                },
+                                {
+                                    "height": 508,
+                                    "windSpeed": 5.715554228944973,
+                                    "windDirection": 317.054260535659
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
++ Response 204
+
++ Response 404
