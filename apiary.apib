@@ -553,3 +553,83 @@ HOST: https://polls.apiblueprint.org/
 + Response 204
 
 + Response 404
+
+
+## Метеопрогноз на 72 часа  [/localforecast{?lat,lon}]
+
++ Parameters
+    + lat (Required, String) ... Широта точки, для которой необходим прогноз
+    + lon (Required, String) ... Долгота точки, для которой необходим прогноз
+
+### Получить метеопрогноз для точки на 72 часа [GET]
+
++ Response 200 (application/json; charset=UTF-8)
+
+        {
+            "data": [
+                {
+                    "time": "20.05.2020T16",
+                    "temperature": 9.824,
+                    "pressure": 982.501,
+                    "windspeed": 7.148466,
+                    "winddir": 298.682947,
+                    "gusts": 5.71833,
+                    "visibility": 24.1349,
+                    "clouds": 10,
+                    "cloudslow": 4018.8465575145074,
+                    "convective": true
+                },
+                {
+                    "time": "20.05.2020T17",
+                    "temperature": 10.75,
+                    "pressure": 981.671,
+                    "windspeed": 9.41756,
+                    "winddir": 289.307586,
+                    "gusts": 5.81402,
+                    "visibility": 16.9949,
+                    "clouds": 10,
+                    "cloudslow": 3990.8061317447496,
+                    "convective": true
+                }
+                {
+                    "time": "21.05.2020T02",
+                    "temperature": 2.35,
+                    "pressure": 982.034,
+                    "windspeed": 7.502719,
+                    "winddir": 297.540048,
+                    "gusts": 9.61462,
+                    "visibility": 24.1348,
+                    "clouds": 9,
+                    "cloudslow": 6659.139134849063,
+                    "convective": false
+                },
+                {
+                    "time": "21.05.2020T03",
+                    "temperature": 1.516,
+                    "pressure": 982.137,
+                    "windspeed": 6.064074,
+                    "winddir": 303.06701,
+                    "gusts": 8.92638,
+                    "visibility": 24.1352,
+                    "clouds": 9,
+                    "cloudslow": 6658.9939633706745,
+                    "convective": false
+                },
+                {
+                    "time": "23.05.2020T16",
+                    "temperature": 12.299,
+                    "pressure": 996.271,
+                    "windspeed": 10.695729,
+                    "winddir": 258.009573,
+                    "gusts": 6.12361,
+                    "visibility": 24.1349,
+                    "clouds": 4,
+                    "cloudslow": 1302.4178573175864,
+                    "convective": false
+                }
+            ]
+        }
+
++ Response 204
+
++ Response 404
