@@ -32,9 +32,42 @@ HOST: https://polls.apiblueprint.org/
                     }
                 ],
             "count": 2
-    
+        }
 
-+ Response 204 (application/json; charset=UTF-8)
++ Response 204
+
++ Response 404
 
 
-+ Response 404 (application/json; charset=UTF-8)
+## Траектории объектов от ДЕЦИМА [/trajectory/decima{?id}]
+
+### Получить список траекторий объектов от ДЕЦИМА [GET]
+
+
++ Response 200 (application/json; charset=UTF-8)
+
+        {
+            "items": [
+                {
+                    "id": "NUMBER1",
+                    "data": [
+                        {
+                            "time": 1589864384,
+                            "latitude": 61.698871666667,
+                            "longitude": 72.178053333333,
+                            "altitude": 12.80496
+                        },
+                        {
+                            "time": 1589864781,
+                            "latitude": 61.6988,
+                            "longitude": 72.177946666667,
+                            "altitude": 14.02448
+                        }
+                    ]
+                }
+            ],
+            "count": 1
+        }
+            
+
++ Response 204
