@@ -437,3 +437,119 @@ HOST: https://polls.apiblueprint.org/
 + Response 204
 
 + Response 404
+
+## Оперативные метеовеличины от метеостанций  [/meteo/stations]
+
+### Получить значения оперативных метеовеличин от метеостанции [GET]
+
++ Response 200 (application/json; charset=UTF-8)
+
+        {
+                "items": [
+                {
+                    "id": "1",
+                    "latitude": 56.1431,
+                    "longitude": 34.9897,
+                    "humidity": 60,
+                    "pressure": 98100,
+                    "windSpeed": 7.9,
+                    "windAzimuth": 323,
+                    "temperature": 10.9,
+                    "profile": [
+                        {
+                            "altitude": 25,
+                            "temperature": 8.2
+                        },
+                        {
+                            "altitude": 50,
+                            "temperature": 8
+                        },
+                        {
+                            "altitude": 75,
+                            "temperature": 7.7
+                        },
+                        {
+                            "altitude": 100,
+                            "temperature": 7.5
+                        },
+                        {
+                            "altitude": 150,
+                            "temperature": 7
+                        },
+                        {
+                            "altitude": 200,
+                            "temperature": 6.5
+                        },
+                        {
+                            "altitude": 250,
+                            "temperature": 5.9
+                        },
+                        {
+                            "altitude": 300,
+                            "temperature": 5.4
+                        },
+                        {
+                            "altitude": 350,
+                            "temperature": 4.9
+                        },
+                        {
+                            "altitude": 400,
+                            "temperature": 4.4
+                        },
+                        {
+                            "altitude": 450,
+                            "temperature": 3.9
+                        },
+                        {
+                            "altitude": 500,
+                            "temperature": 3.2
+                        },
+                        {
+                            "altitude": 550,
+                            "temperature": 2.7
+                        },
+                        {
+                            "altitude": 600,
+                            "temperature": 2.1
+                        },
+                        {
+                            "altitude": 650,
+                            "temperature": 1.6
+                        },
+                        {
+                            "altitude": 700,
+                            "temperature": 1.2
+                        },
+                        {
+                            "altitude": 750,
+                            "temperature": 0.8
+                        },
+                        {
+                            "altitude": 800,
+                            "temperature": 0.5
+                        },
+                        {
+                            "altitude": 850,
+                            "temperature": 0.2
+                        },
+                        {
+                            "altitude": 900,
+                            "temperature": -0.1
+                        },
+                        {
+                            "altitude": 950,
+                            "temperature": -0.3
+                        },
+                        {
+                            "altitude": 1000,
+                            "temperature": -0.6
+                        }
+                    ]
+                }
+            ],
+            "count": 1
+        }
+
++ Response 204
+
++ Response 404
