@@ -1,7 +1,7 @@
 /objects/decima,1
 /trajectory/decima,1
-/routes,1
-/routes/info,0
+/routes,0
+/routes/info,1
 /meteo/route,1
 /meteo/stations,1
 /localforecast,1
